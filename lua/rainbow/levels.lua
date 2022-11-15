@@ -150,6 +150,7 @@ return {
         arguments = true,
         binary = true,
         block = true,
+        do_block = true,
         interpolation = true,
         list = true,
         map = true,
@@ -177,5 +178,5 @@ return {
         function_call = true,
         substitution_reference = true,
         variable_reference = true,
-    }
+    },
 }
