@@ -72,7 +72,7 @@ local function update_range(bufnr, changes, tree, lang)
         local root_node = tree:root()
         local query = queries.get_query(lang, "parens")
         local levels = require("rainbow.levels")[lang]
-        if query ~= nil then
+        if query ~= nil and vim.api.nvim_buf_is_loaded(bufnr) then
             for _, node, _ in query:iter_captures(root_node, bufnr, change[1], change[3] + 1) do
                 -- set colour for this nesting level
                 if not node:has_error() then
